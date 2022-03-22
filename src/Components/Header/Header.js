@@ -15,12 +15,12 @@ const Header = () => {
         <HeaderWrapper>
            <LogoImg src='./Logo.png'/>
            <Navs onClick={handleClick} click={click}>
-               <NavLinks>Home</NavLinks>
-               <NavLinks>About</NavLinks>
-               <NavLinks>Contact</NavLinks>
-               <NavLinks>Blog</NavLinks>
+               <NavLinks to='/' >Home</NavLinks>
+               <NavLinks to='/about'>About</NavLinks>
+               <NavLinks to='/contact'>Contact</NavLinks>
+               <NavLinks to=''>Blog</NavLinks>
                <div></div>
-               <Button variant="contained" color="success"style={{width:'150px'}} >Donate</Button>
+               <Button variant="contained" color="success" style={{width:'150px'}} >Donate</Button>
            </Navs>
            <MobileIcon onClick={handleClick}>
                 {click ? <FaTimes /> :  <FaBars />}
@@ -36,10 +36,16 @@ const HeaderContainer = styled.div`
 display: flex;
 justify-content: center;
 width: 100%;
-height: 90px;
+height: 80px;
 box-shadow: 0px 4px 4px 4px rgba(225, 225, 225, 0.5);
 z-index: 999;
-position: sticky;
+position: fixed;
+background: white;
+background: linear-gradient(to right bottom,
+    rgba(255, 255, 255,0.7),
+    rgba(255, 255, 255, 0.3)
+        );
+backdrop-filter: blur(1rem);
 `
 const HeaderWrapper = styled.div`
 width: 90%;
@@ -50,6 +56,10 @@ justify-content: space-between;
 `
 const LogoImg = styled.img`
 width: 70px;
+
+@media screen and (max-width: 425px){
+    width: 55px;
+}
 `
 const Navs = styled.div`
 display: flex;
@@ -73,11 +83,13 @@ font-weight: bold;
     opacity: 0.93;
     background: #003399;
     color: white;
-    z-index: 1;
+    z-index: 900;
     border-radius: 0 25px 25px 0;
 }
 `
-const NavLinks = styled.div`
+const NavLinks = styled(Link)`
+        text-decoration: none;
+        color: inherit;
         border-bottom: 2px solid transparent;
 
     &:hover{
