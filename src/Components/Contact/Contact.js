@@ -15,7 +15,9 @@ const Contact = () => {
                 <OverLayer>
                     <Span>CONTACT US</Span>
                     <p>You can reach us anytime via email@gmail.com</p>
-                    <Button>Donate</Button>
+                    <Button>
+                        Donate
+                    </Button>
                 </OverLayer>
             </LandingPage>
 
