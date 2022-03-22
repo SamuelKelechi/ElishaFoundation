@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import BlogLink from './BlogLink/BlogLink';
 import Gallery from './GalleryHold/Gallery';
 import OurImpact from './ImpactHold/OurImpact';

@@ -36,7 +36,7 @@ const Footer = () => {
                 <Side3>
                     <p>GET IN TOUCH</p>
                     <p><img src={Phone} alt='Phone' />+2348144253138</p>
-                    <p><img src={Email} alt='Email' />Foundation@gmail.com</p>
+                    <p><img src={Email} alt='Email' />Edhf@gmail.com</p>
                     <b>OUR SOCIAL LINKS</b>
                     <span><img src={Facebook} alt='Facebook' /> <img src={Instagram} alt='Instagram' /></span>
                 </Side3>
