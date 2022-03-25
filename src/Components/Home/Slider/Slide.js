@@ -1,30 +1,18 @@
 import React from "react";
-import Slider from "react-slick";
 import styled from 'styled-components';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import Avat1 from '../../Images/Card1.jpg'
-import Avat2 from '../../Images/Card2.jpg'
-import Avat3 from '../../Images/Card3.jpg'
-// import Avat4 from '../../Images/Card4.jpg'
+import Avat1 from '../../Images/Card1.jpg';
+import Avat2 from '../../Images/Card2.jpg';
+import Avat3 from '../../Images/Card3.jpg';
+import { Carousel } from 'antd';
 import { Button } from "@mui/material";
 
 export const Slide = () => { 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-  };
-
 
   return (
   <>
   <Container>
   <Wrapper> 
-				<Mylider {...settings}>
+				<Mylider autoplay>
 					<MyStyled>
 						<SliderImage src={Avat1} />
 					</MyStyled>
@@ -72,17 +60,15 @@ margin-bottom: 10px;
 
 /* padding-top: 80px; */
 `;
-const Mylider = styled(Slider)`
+const Mylider = styled(Carousel)`
   /* transition: all 300s ease; */
 `;
 const MyStyled = styled.div`
 width: 100%;
 height: 500px;
 background-color: #003399;
-opacity: 0.9;
-/* background-color: rgba(0%, 0%, 0%, 1); */
+opacity: 0.95;
 overflow: hidden;
-/* color: black; */
 
 @media screen and (max-width: 600px) {
   height: 400px;

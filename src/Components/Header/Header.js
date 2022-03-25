@@ -18,7 +18,7 @@ const Header = () => {
                <NavLinks to='/' >Home</NavLinks>
                <NavLinks to='/about'>About</NavLinks>
                <NavLinks to='/contact'>Contact</NavLinks>
-               <NavLinks to=''>Blog</NavLinks>
+               <NavLinks to='/blog'>Blog</NavLinks>
                <div></div>
                <Button variant="contained" color="success" style={{width:'150px'}} >Donate</Button>
            </Navs>

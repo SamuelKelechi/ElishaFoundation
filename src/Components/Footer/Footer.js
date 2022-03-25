@@ -6,6 +6,8 @@ import Email from '../Images/mail.png'
 import Facebook from '../Images/facebook.png'
 import Instagram from '../Images/instagram.png'
 import { Button } from '@mui/material';
+import {Link} from 'react-router-dom';
+
 
 let date = new Date().getFullYear();
 console.log(date);
@@ -14,7 +16,6 @@ const Footer = () => {
   return (
     <MainContain>
         <ContainerWrapper>
-           
                 <Side1>
                     <LogoHold src={Logo}/>
                     <p>
@@ -26,10 +27,10 @@ const Footer = () => {
                 <Side2>
                     <p>MAIN LINKS</p>
                     <div>
-                        <span>HOME</span>
-                        <span>ABOUT</span>
-                        <span>CONTACT</span>
-                        <span>BLOG</span>
+                        <Link to='/' style={{textDecoration:'none', color:'white'}}><span>HOME</span></Link>
+                        <Link to='/about' style={{textDecoration:'none', color:'white'}}><span>ABOUT</span></Link>
+                        <Link to='/contact' style={{textDecoration:'none', color:'white'}}><span>CONTACT</span></Link>
+                        <Link to='/blog' style={{textDecoration:'none', color:'white'}}><span>BLOG</span></Link>
                         <span>DONATE</span>
                     </div>
                 </Side2>

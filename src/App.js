@@ -10,20 +10,26 @@ import {
 import Home from "./Components/Home/Home";
 import About from "./Components/About/AboutPage"
 import Contact from "./Components/Contact/Contact";
+import Blog from "./Components/Blog/Blog"
+
+import ScrollToTop from './ScrollToTop'
 
 
 function App() {
   return (
     <>
       <Router>
-        <GlobalStyle />    
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path='/contact' element={<Contact/>} />
-        </Routes>
-        <Footer />
+        <ScrollToTop>
+          <GlobalStyle />    
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path='/contact' element={<Contact/>} />
+            <Route path='/blog' element={<Blog/>} />
+          </Routes>
+          <Footer />
+        </ScrollToTop>
       </Router>
     </>
   );
