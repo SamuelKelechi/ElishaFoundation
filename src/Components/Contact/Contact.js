@@ -149,6 +149,7 @@ const OverLayer = styled.div`
 
     p{
         color: white;
+        font-size: 17px;
     }
 
     @media screen and (max-width: 650px){
