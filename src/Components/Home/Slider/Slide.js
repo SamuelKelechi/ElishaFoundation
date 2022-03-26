@@ -138,6 +138,11 @@ const TextHold = styled.div`
     h2{
     font-size: 30px;
     line-height: 35px;
+    text-align: center;
+    }
+
+    p{
+      text-align: center;
     }
   }
 `
