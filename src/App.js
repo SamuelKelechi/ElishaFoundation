@@ -13,6 +13,7 @@ import Contact from "./Components/Contact/Contact";
 import Blog from "./Components/Blog/Blog"
 
 import ScrollToTop from './ScrollToTop'
+import Submit from "./Components/Submit/Submit";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path='/contact' element={<Contact/>} />
             <Route path='/blog' element={<Blog/>} />
+            <Route path='/submit' element={<Submit/>} />
           </Routes>
           <Footer />
         </ScrollToTop>

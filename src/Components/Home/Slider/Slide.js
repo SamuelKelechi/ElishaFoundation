@@ -1,10 +1,15 @@
 import React from "react";
 import styled from 'styled-components';
-import Avat1 from '../../Images/Card1.jpg';
-import Avat2 from '../../Images/Card2.jpg';
-import Avat3 from '../../Images/Card3.jpg';
+import Avat1 from '../../Images/Slide1.JPG';
+import Avat2 from '../../Images/Slide2.JPG';
+import Avat3 from '../../Images/Slide3.JPG';
+import Avat4 from '../../Images/Slide4.JPG';
+import Avat5 from '../../Images/Slide6.JPG';
+
+
 import { Carousel } from 'antd';
 import { Button } from "@mui/material";
+import {Link} from 'react-router-dom'
 
 export const Slide = () => { 
 
@@ -22,9 +27,12 @@ export const Slide = () => {
 					<MyStyled>
 						<SliderImage src={Avat3} />
 					</MyStyled>
-          {/* <MyStyled>
+          <MyStyled>
 						<SliderImage src={Avat4} />
-					</MyStyled> */}
+					</MyStyled>
+          <MyStyled>
+						<SliderImage src={Avat5} />
+					</MyStyled>
 				</Mylider>
 			</Wrapper>
       <TextHold>
@@ -36,8 +44,8 @@ export const Slide = () => {
            better than we meet it.
         </p>
         <div>
-          <Button variant="contained" color="success">Donate</Button>
-          <Button variant="outlined" style={{color:'white', border:'1px solid white'}}>Read More</Button>
+          <Link to='/submit' style={{textDecoration:'none'}}><Button variant="contained" color="success">Donate</Button></Link>
+          <Link to='/about' style={{textDecoration:'none'}}><Button variant="outlined" style={{color:'white', border:'1px solid white'}}>Read More</Button></Link> 
         </div>
       </TextHold>
   </Container>
@@ -52,7 +60,7 @@ width: 100%;
 height: 400px;
 overflow: hidden;
 margin-bottom: 120px;
-padding-top: 83px;
+padding-top: 86px;
 
 @media screen and (max-width: 425px){
 margin-bottom: 10px;

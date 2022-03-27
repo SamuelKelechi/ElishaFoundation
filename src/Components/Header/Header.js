@@ -20,7 +20,7 @@ const Header = () => {
                <NavLinks to='/contact'>Contact</NavLinks>
                <NavLinks to='/blog'>Blog</NavLinks>
                <div></div>
-               <Button variant="contained" color="success" style={{width:'150px'}} >Donate</Button>
+               <NavLinks to='/submit'><Button variant="contained" color="success" style={{width:'150px'}} >Donate</Button></NavLinks>
            </Navs>
            <MobileIcon onClick={handleClick}>
                 {click ? <FaTimes /> :  <FaBars />}
