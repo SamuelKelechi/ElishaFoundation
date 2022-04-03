@@ -41,7 +41,7 @@ const Icon = styled.img`
 
 const Discription = styled.div`
     width:64%;
-    font-size:16px;
+    font-size:18px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -60,6 +60,7 @@ const Discription = styled.div`
         align-items:center;
         text-align:left;
         word-brake:brake-all;
+        margin-top: 20px;
     }
 
     @media screen and (max-width:499px){
@@ -82,16 +83,9 @@ const Discription = styled.div`
         width:100%;
     }
 
-    @media screen and (max-width:946px){
-        width:90%;
-        // height:100%;
-        justify-content:center;
-        align-items:center;
-    }
-
     @media screen and (max-width:955px){
         width:90%;
-        // height:100%;
+        font-size: 16px;
         justify-content:center;
         align-items:center;
     }

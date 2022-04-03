@@ -1,8 +1,8 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
-import Image1 from '../../Images/Card1.jpg'
-import Image2 from '../../Images/Card2.jpg'
+import Image1 from '../../Images/impact1.JPG'
+import Image2 from '../../Images/impact2.JPG'
 
 
 const OurImpact = () => {
@@ -66,6 +66,9 @@ const CardWrap = styled.div`
         display: flex;
         justify-content: center;
     }
+    @media screen and (max-width: 425px){
+        flex-direction: column-reverse;
+    }
 `
 
 const Card1 = styled.div`
@@ -86,10 +89,17 @@ const Card1 = styled.div`
 
     p{
         width: 95%;
+        font-size: 16px;
+    }
+
+    @media screen and (max-width:678px){
+        margin: 0;
+        margin-bottom: 30px;
     }
 
     @media screen and (max-width: 425px){
         width: 100%;
+        margin-bottom: 30px;
 
         Button{
         width: 100%;
@@ -99,7 +109,6 @@ const Card1 = styled.div`
         width: 100%;
         }
     }
-
 `
 
 const ImgHold = styled.img`
@@ -110,8 +119,14 @@ const ImgHold = styled.img`
     object-fit: cover;
     object-position: center;
 
+    @media screen and (max-width: 768px){
+        margin-top: 20px;
+    }
+
     @media screen and (max-width: 425px){
         width: 100%;
+        margin: 0;
+        margin-top: 10px;
     }
 `
 

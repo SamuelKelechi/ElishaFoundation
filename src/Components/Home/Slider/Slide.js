@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import Avat1 from '../../Images/Slide1.JPG';
 import Avat2 from '../../Images/Slide2.JPG';
-import Avat3 from '../../Images/Slide3.JPG';
+import Avat3 from '../../Images/Slide.JPG';
 import Avat4 from '../../Images/Slide4.JPG';
 import Avat5 from '../../Images/Slide6.JPG';
 
@@ -73,7 +73,7 @@ const Mylider = styled(Carousel)`
 `;
 const MyStyled = styled.div`
 width: 100%;
-height: 500px;
+height: 550px;
 background-color: #003399;
 opacity: 0.95;
 overflow: hidden;
@@ -91,11 +91,8 @@ const SliderImage = styled.img`
 width: 100%;
 height: 100%;
 opacity: 0.3;
-
 object-fit: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
+object-position: center;
 `;
 
 const TextHold = styled.div`
@@ -111,6 +108,10 @@ const TextHold = styled.div`
   color: white;
   font-size: 45px;
   line-height: 59px;
+  }
+
+  p{
+    font-size: 16px;
   }
 
   div{

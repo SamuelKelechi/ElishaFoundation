@@ -1,10 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 const Card = (props) => {
+
+    React.useEffect(()=>{
+        Aos.init()
+    },[]);
+
   return (
-    <CardHold style={{background: props.col}}>
+    <CardHold  data-aos="fade-up"
+    data-aos-offset="200"
+    data-aos-easing="ease-in-sine"
+    
+    style={{background: props.col}}>
         <CardWrap>
             <IconHold src={props.icon}/>
             <h2>{props.title}</h2>
@@ -55,7 +66,7 @@ const CardWrap = styled.div`
 
     p{
         width: 78%;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 20px;
     }
 
@@ -71,6 +82,7 @@ const CardWrap = styled.div`
 
         p{
         width: 95%;
+        font-size: 16px;
         }
     }
 `

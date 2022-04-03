@@ -6,7 +6,7 @@ const TeamCard = ({img,name,text}) =>{
         <Div>
             <Image src = {img}/>
             <Span>
-                <div>{name}</div>
+                <NameTag style={{color:'rgb(0,51,153)'}}>{name}</NameTag>
                 <div>{text}</div>
             </Span>
         </Div>
@@ -52,4 +52,7 @@ const Div = styled.div`
         width:100%;
         height:450px;
     }
+`
+const NameTag = styled.div`
+    font-size: 18px;
 `

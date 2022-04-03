@@ -8,6 +8,7 @@ import facebook from "../Images/facebook.png";
 import instagram from "../Images/instagram.png";
 import social from "../Images/social.webp";
 import { Button } from '@mui/material';
+import {Link} from 'react-router-dom';
 
 
 
@@ -24,9 +25,11 @@ const Contact = () => {
                 <OverLayer>
                     <Span>CONTACT US</Span>
                     <p>You can reach us anytime via edhf@gmail.com</p>
-                    <Btn>
-                        Donate
-                    </Btn>
+                    <Link to='/submit'>
+                        <Btn>
+                            Donate
+                        </Btn>
+                    </Link>
                 </OverLayer>
             </LandingPage>
             <Text>FIND US HERE</Text>
@@ -155,6 +158,12 @@ const OverLayer = styled.div`
     @media screen and (max-width: 650px){
         justify-content: flex-end;
     }
+
+    @media screen and (max-width: 425px){
+        p{
+            font-size: 14px;
+        }
+    }
 `
 const Btn = styled.button`
     width:120px;
@@ -232,6 +241,7 @@ const ContactWrap = styled.div`
     @media screen and (max-width: 650px){
         width: 95%;
         justify-content: center;
+        margin-left: 10px;
     }
 `
 

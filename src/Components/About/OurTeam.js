@@ -1,17 +1,24 @@
 import React from "react";
-import styled from "styled-components"
-import Cards from "./TeamCard"
-import img1 from "./image/FB_IMG_1628174930539.jpg"
+import styled from "styled-components";
+import Cards from "./TeamCard";
+import img1 from "./image/elisha.jpg";
+import img2 from "./image/sunday.jpg";
+import img3 from "./image/james.jpg";
+import img4 from "./image/titi.jpg";
+import img5 from "./image/toyin.jpg";
+
+
 
 const Card = () =>{
     return(
         <Content>
             <h1>OUR TEAM</h1>
             <Wrapper>
-               <Cards img={img1} name="Janet Jessy" text="Project Manager"/>
-               <Cards img={img1} name="Janet Jessy" text="Project Manager"/>
-               <Cards img={img1} name="Janet Jessy" text="Project Manager"/>
-               <Cards img={img1} name="Janet Jessy" text="Project Manager"/>
+               <Cards img={img1} name="Elisha Ajose" text="FOUNDER/CHAIRMAN"/>
+               <Cards img={img2} name="Sanni Sunday Emmanuel" text="SECRETARY"/>
+               <Cards img={img3} name="James Adeleye Adesuyi" text="TREASURER"/>
+               <Cards img={img4} name="Miss Titilope Olumofin" text="SOCIAL WORKER"/>
+               <Cards img={img5} name="Oluwatoyin Alicia Johnson" text="SOCIAL WORKER"/>
             </Wrapper>
         </Content>
     )
@@ -55,6 +62,8 @@ const Content = styled.div`
 
     h1{
         color:#003399;
+        font-size: 30px;
+        font-weight: bold;
     }
 
     @media screen and (max-width:768px){

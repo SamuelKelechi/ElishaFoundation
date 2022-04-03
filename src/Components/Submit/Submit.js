@@ -1,11 +1,13 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import img from '../Images/Support.jpg';
 import Visa from '../Images/Visa.png'
 
 
 const Submit= () => {
+    const [amount, setAmount] = useState(0)
+
   return (
     <>
     <br/>
@@ -27,33 +29,37 @@ const Submit= () => {
             <DonateContent>
                 <Top>Donate Now</Top>
                 <Avat src={Visa} alt='donate' />
+                <br/>
+                <h3> {" "}You are giving ₦{amount / 100}{" "}</h3>
                 <p>Please enter your card information</p>
                 <FomWrapper>
                     <Left>
-                        <label>Amount</label><br/><input type='number' placeholder='Enter Amount to Debit'/>
+                        <label>Amount</label><br/><input   value={amount}
+                            onChange={(e) => {
+                                setAmount(e.target.value);
+                            }} type='number' placeholder='Enter Amount to Debit'/>
                         <br/>
                         <br/>
-                        <label>Card Number</label><br/><input type='number' placeholder='Enter Card Number'/>
-                        <br/>
-                        <br/>
-                        <label>Expiration Date</label><br/><input type='date' />
+                        <label>Name on Card</label><br/><input type='string' placeholder='Enter Name on Your Card'/>
                         <br/>
                         <br/>
                     </Left>
                     <Right>
-                        <label>Name on Card</label><br/><input type='string' placeholder='Enter Name on Your Card'/>
-                        <br/>
-                        <br/>
                         <label type='email' >Email</label><br/><input placeholder='Enter Your Email'/>
                         <br/>
                         <br/>
                         <label>Country</label><br/><input type='country' placeholder='Enter Name of Country'/>
+                        <br/>
+                        <br/>
                     </Right>
                 </FomWrapper>
                 <Button variant="contained" >Donate now</Button>
             </DonateContent>
         </DonateHold>
         <br/>
+        <BankDetails>
+            YOU CAN DO A TRANSFER TO ANY OF THE ACCOUNT DETAILS BELOW
+        </BankDetails>
      </MainContain>
     </>
   )
@@ -133,6 +139,10 @@ const DonateHold = styled.div`
     display: flex;
     justify-content: center;
 
+    h3{
+        color: white;
+    }
+
     @media screen and (max-width: 768px){
         width: 90%;
     }
@@ -209,7 +219,7 @@ const FomWrapper = styled.div`
 
 const Left = styled.div`
     width: 350px;
-    margin: 30px;
+    margin: 10px;
     color: white;
 
     input{
@@ -228,7 +238,7 @@ const Left = styled.div`
 
 const Right = styled.div`
         width: 350px;
-        margin: 30px;
+        margin: 10px;
         color: white;
 
     input{
@@ -243,4 +253,9 @@ const Right = styled.div`
     @media screen and (max-width: 768px){
         margin: 0
     }
+`
+const BankDetails = styled.div`
+    width: 80%;
+    display: flex;
+    justify-content: center;
 `

@@ -1,69 +1,52 @@
+import React,{useEffect, useState} from 'react';
 import { Button } from '@mui/material';
-import React from 'react';
 import styled from 'styled-components';
-import Blog1 from '../../Images/Blog1.jpg';
-import Blog2 from '../../Images/Blog2.jpg'
-import Blog3 from '../../Images/Blog3.jpg'
-
+import {db} from "../../../Base";
+import {collection, getDocs, limit, query, orderBy} from "firebase/firestore";
 
 
 const BlogLink = () => {
+    const [getblog, setGetblog] = useState([]);
+
+    const userCollectionRef = collection(db, "blog")
+
+    const querry = query(userCollectionRef, orderBy("time", "desc"), limit(3))
+
+    const getBlog = async () => {
+        const data = await getDocs(querry, userCollectionRef);
+        setGetblog(data.docs.map((doc) => ({...doc.data(), id:doc.id})))
+    };
+
+    useEffect(() => {
+        getBlog();
+    }, []);
+
   return (
     <Container>
         <TitleContain>
             Check out our Latest <span>Blogs</span>
         </TitleContain>
         <ContainerWrapper>
-            <BlogCard>
-                <TextHold>
-                    <TextWrap>
-                        <HeadHold>Donating to Charity</HeadHold>
-                        <p>
-                            Text buttons are typically used for less-pronounced actions, 
-                            including those located: in dialogs, in cards. In cards, text 
-                            buttons help maintain an emphasis on card content.
-                        </p>
-                        <ButtomHold>
-                            <p>Posted January 4 2022</p>
-                            <Button variant="contained" color="success">Read More</Button>
-                        </ButtomHold>
-                    </TextWrap>
-                </TextHold>
-            </BlogCard>
+           
+           {
+               getblog.map(({id, title, desc, avatar, time}) => (
+                <BlogCard2 key={id} style={{backgroundImage:`url(${avatar})`}}>
+                    <TextHold>
+                        <TextWrap>
+                            <HeadHold>{title}</HeadHold>
+                            <p>
+                                {desc}
+                            </p>
+                            <ButtomHold>
+                                <p>{time.toDate().toDateString()}</p>
+                                <Button variant="contained" style={{backgroundColor:"#25AAE2"}}>Read More</Button>
+                            </ButtomHold>
+                        </TextWrap>
+                    </TextHold>
+                </BlogCard2>
+               ))
+           }
 
-            <BlogCard2>
-                <TextHold>
-                    <TextWrap>
-                        <HeadHold>Donating to Charity</HeadHold>
-                        <p>
-                            Text buttons are typically used for less-pronounced actions, 
-                            including those located: in dialogs, in cards. In cards, text 
-                            buttons help maintain an emphasis on card content.
-                        </p>
-                        <ButtomHold>
-                            <p>Posted January 3 2022</p>
-                            <Button variant="contained" style={{backgroundColor:"#25AAE2"}}>Read More</Button>
-                        </ButtomHold>
-                    </TextWrap>
-                </TextHold>
-            </BlogCard2>
-
-            <BlogCard3>
-                <TextHold>
-                    <TextWrap>
-                        <HeadHold>Donating to Charity</HeadHold>
-                        <p>
-                            Text buttons are typically used for less-pronounced actions, 
-                            including those located: in dialogs, in cards. In cards, text 
-                            buttons help maintain an emphasis on card content.
-                        </p>
-                        <ButtomHold>
-                            <p>Posted January 1 2021</p>
-                            <Button variant="contained" style={{backgroundColor:"#EE5728"}}>Read More</Button>
-                        </ButtomHold>
-                    </TextWrap>
-                </TextHold>
-            </BlogCard3>
         </ContainerWrapper>
     </Container>
   )
@@ -99,27 +82,8 @@ const ContainerWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
 `
-const BlogCard = styled.div`
-    width: 350px;
-    height: 380px;
-    border-radius: 8px;
-    background: url(${Blog1});
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 20px;
-
-    @media screen and (max-width){
-        width: 90%;
-        margin: 0;
-        margin-top: 15px;
-    }
-`
 const TextHold = styled.div`
     width: 100%;
-    height: 55%;
     color: white;
     background: #003399;
     opacity: 0.8;
@@ -127,7 +91,8 @@ const TextHold = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0 10px 0;
+    padding-bottom: 15px;
+    padding-top: 10px;
 
     @media screen and (max-width: 425px){
         height: auto;
@@ -144,12 +109,13 @@ const TextWrap = styled.div`
 
 const HeadHold = styled.div`
     font-weight: 500;
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 20px;
     color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 
     @media screen and (max-width: 425px){
-        font-size: 20px;
+        font-size: 17px;
         line-height: 45px;
     }
 `
@@ -157,6 +123,7 @@ const ButtomHold = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     Button{
         height: 30px;
@@ -170,34 +137,16 @@ const ButtomHold = styled.div`
 `
 
 const BlogCard2 = styled.div`
-     width: 350px;
+    width: 350px;
     height: 380px;
     border-radius: 8px;
-    background: url(${Blog2});
     background-position: center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     margin: 20px;
-
-    @media screen and (max-width){
-        width: 90%;
-        margin: 0;
-        margin-top: 15px;
-    }
-`
-const BlogCard3 = styled.div`
-     width: 350px;
-    height: 380px;
-    border-radius: 8px;
-    background: url(${Blog3});
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 20px;
+    border: 1px solid lightgrey;
 
     @media screen and (max-width){
         width: 90%;
