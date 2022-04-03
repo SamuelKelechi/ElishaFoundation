@@ -53,7 +53,7 @@ const Footer = () => {
         </ContainerWrapper>
         <BottomTab>
 				<Tab>
-					<span>Developed by <a href="https://samuel-kelechi.web.app/" target="blank" style={{textDecoration:"none", color:"white"}}>CodeLab</a> 🚀 | © {date} All rights reserved</span>
+					<span>Developed by <a href="https://samuel-kelechi.web.app/" target="blank" style={{textDecoration:"none", color:"white"}}>CodeLab</a> 🚀 | © {date} All rights reserved, EDHF</span>
 				</Tab>
 		</BottomTab>
     </MainContain>

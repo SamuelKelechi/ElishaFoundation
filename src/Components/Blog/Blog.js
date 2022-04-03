@@ -1,14 +1,39 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
-import img from "../Images/Card1.jpg";
-import donate from "../Images/donate.jpg"
+import img from "../Images/about.JPG";
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+import {db} from "../../Base"
+import {collection, getDocs, query, orderBy, limit} from "firebase/firestore";
 
-import Blog1 from '../Images/Blog1.jpg';
-import Blog2 from '../Images/Blog2.jpg'
-import Blog3 from '../Images/Blog3.jpg'
 
 const Blog = () => {
+    const [getblog, setGetblog] = useState([]);
+    const [getblog1, setGetblog1] = useState([]);
+
+    const userCollectionRef = collection(db, "blog")
+
+    const querry = query(userCollectionRef, orderBy("time", "desc"))
+    const q = query(userCollectionRef, orderBy("time", "desc"), limit(1))
+
+    
+
+    const getBlog = async () => {
+        const data = await getDocs(querry, userCollectionRef);
+        setGetblog(data.docs.map((doc) => ({...doc.data(), id:doc.id})))
+    };
+
+    const getBlog1 = async () => {
+        const data = await getDocs(q, userCollectionRef);
+        setGetblog1(data.docs.map((doc) => ({...doc.data(), id:doc.id})))
+    };
+
+    useEffect(() => {
+        getBlog();
+        getBlog1();
+    }, []);
+
   return (
     <>
     <br/>
@@ -24,9 +49,11 @@ const Blog = () => {
                     We are excited about the lives we are touching, 
                     catch up on our events
                   </p>
-                  <Btn>
-                    Donate
-                  </Btn>
+                  <Link to='/submit'>
+                    <Btn>
+                        Donate
+                    </Btn>
+                  </Link>
               </OverLayer>
           </LandingPage>
           <br/>
@@ -34,71 +61,51 @@ const Blog = () => {
             <RecentBlog>
               <Head1>Most Recent Update</Head1>
               <RecentWrapper>
-                <Left src={donate} />
-                <Right>
-                  <h2>Our Out-reach </h2>
-                  <p>
-                    Our vision is: building people with dignity and self-worth. Every human being should have the same opportunity. More than 100 million Nigerians lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate and enlighten communities, empower young people, serve as the voice to the voiceless, we give grants and scholarship, we serve as an outstretched arm of God, we bring succor and hope to the need
-                    lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate..
-                  </p>
-                  <Button variant="contained" color="success">Read More</Button>
-                </Right>
+
+                {
+                    getblog1.map((props)=>(
+                    <>
+                    <Left src={props.avatar} />
+                    <Right>
+                        <h2>{props.title} </h2>
+                        <p>
+                            {props.story}
+                        </p>
+                        <Button variant="contained" color="success">Read More</Button>
+                    </Right>
+                    </>
+                    ))
+                }
+
               </RecentWrapper>
             </RecentBlog>
           </Updates>
           <br/>
-          <h2>Most Popular Events</h2>
-          <ContainerWrapper>
-            <BlogCard>
-                <TextHold>
-                    <TextWrap>
-                        <HeadHold>Donating to Charity</HeadHold>
-                        <p>
-                            Text buttons are typically used for less-pronounced actions, 
-                            including those located: in dialogs, in cards. In cards, text 
-                            buttons help maintain an emphasis on card content.
-                        </p>
-                        <ButtomHold>
-                            <p>Posted January 4 2022</p>
-                            <Button variant="contained" color="success">Read More</Button>
-                        </ButtomHold>
-                    </TextWrap>
-                </TextHold>
-            </BlogCard>
+          <h2>Popular Events</h2>
+        <ContainerWrapper>
+           
+           {
+               getblog.map(({id, title, desc, time, avatar}) => (
+                <BlogCard key={id} style={{backgroundImage:`url(${avatar})`}}>
+                    <TextHold>
+                        <TextWrap>
+                            <HeadHold>{title}</HeadHold>
+                            <p>
+                               {desc}
+                            </p>
+                            <ButtomHold>
+                                <p>
+                                    {time.toDate().toDateString()}
+                                    {/* {moment(time.toDate()).fromNow()} */}
+                                </p>
+                                <Link to={`/blogdetails/${id}`}><Button variant="contained" color="success">Read More</Button></Link>
+                            </ButtomHold>
+                        </TextWrap>
+                    </TextHold>
+                </BlogCard>
+               ))
+           }
 
-            <BlogCard2>
-                <TextHold>
-                    <TextWrap>
-                        <HeadHold>Donating to Charity</HeadHold>
-                        <p>
-                            Text buttons are typically used for less-pronounced actions, 
-                            including those located: in dialogs, in cards. In cards, text 
-                            buttons help maintain an emphasis on card content.
-                        </p>
-                        <ButtomHold>
-                            <p>Posted January 3 2022</p>
-                            <Button variant="contained" style={{backgroundColor:"#25AAE2"}}>Read More</Button>
-                        </ButtomHold>
-                    </TextWrap>
-                </TextHold>
-            </BlogCard2>
-
-            <BlogCard3>
-                <TextHold>
-                    <TextWrap>
-                        <HeadHold>Donating to Charity</HeadHold>
-                        <p>
-                            Text buttons are typically used for less-pronounced actions, 
-                            including those located: in dialogs, in cards. In cards, text 
-                            buttons help maintain an emphasis on card content.
-                        </p>
-                        <ButtomHold>
-                            <p>Posted January 1 2021</p>
-                            <Button variant="contained" style={{backgroundColor:"#EE5728"}}>Read More</Button>
-                        </ButtomHold>
-                    </TextWrap>
-                </TextHold>
-            </BlogCard3>
         </ContainerWrapper>
 
         </MainContainer>
@@ -116,7 +123,7 @@ const MainContainer = styled.div`
 
   h2{
     width: 90%;
-    padding-left: 40px;
+    padding-left: 15px;
     font-size: 25px;
 
   }
@@ -145,7 +152,7 @@ const Image = styled.img`
 const OverLayer = styled.div`
     height:100%;
     width:100%;
-    background-color:rgb(9,82,252, 40%);
+    background-color:rgb(9,82,252, 60%);
     position:relative;
     display:flex;
     flex-direction:column;
@@ -199,12 +206,15 @@ const Updates = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 20px;
 `
 
 const Head1 = styled.div`
     font-size: 25px;
     font-weight: bold;
     padding-left: 40px;
+    margin-bottom: 10px;
 
    @media screen and (max-width: 425px){
     font-size: 22px;
@@ -221,7 +231,7 @@ const RecentWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
 `
 
 const Left = styled.img`
@@ -240,8 +250,14 @@ const Right = styled.div`
   width: 600px;
   
   h2{
-    font-size: 25px;
+    font-size: 20px;
     padding: 0;
+    text-transform: uppercase;
+  }
+
+  p{
+      line-height: 25px;
+      font-size: 17px;
   }
 
   @media screen and (max-width: 650px){
@@ -255,7 +271,7 @@ const Right = styled.div`
 `
 
 const ContainerWrapper = styled.div`
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -264,13 +280,13 @@ const BlogCard = styled.div`
     width: 300px;
     height: 420px;
     border-radius: 8px;
-    background: url(${Blog1});
     background-position: center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     margin: 20px;
+    border: 1px solid lightgrey;
 
     @media screen and (max-width){
         width: 90%;
@@ -280,7 +296,6 @@ const BlogCard = styled.div`
 `
 const TextHold = styled.div`
     width: 100%;
-    height: 55%;
     color: white;
     background: #003399;
     opacity: 0.8;
@@ -288,7 +303,8 @@ const TextHold = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0 10px 0;
+    padding-bottom: 15px;
+    padding-top: 10px;
 
     @media screen and (max-width: 425px){
         height: auto;
@@ -305,12 +321,13 @@ const TextWrap = styled.div`
 
 const HeadHold = styled.div`
     font-weight: 500;
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 20px;
     color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 
     @media screen and (max-width: 425px){
-        font-size: 20px;
+        font-size: 17px;
         line-height: 45px;
     }
 `
@@ -318,6 +335,7 @@ const ButtomHold = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     Button{
         height: 30px;
@@ -327,42 +345,5 @@ const ButtomHold = styled.div`
             font-size: 10px;
             width: 60px;
         }
-    }
-`
-
-const BlogCard2 = styled.div`
-    width: 300px;
-    height: 420px;
-    border-radius: 8px;
-    background: url(${Blog2});
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 20px;
-
-    @media screen and (max-width){
-        width: 90%;
-        margin: 0;
-        margin-top: 15px;
-    }
-`
-const BlogCard3 = styled.div`
-    width: 300px;
-    height: 420px;
-    border-radius: 8px;
-    background: url(${Blog3});
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 20px;
-
-    @media screen and (max-width){
-        width: 90%;
-        margin: 0;
-        margin-top: 15px;
     }
 `

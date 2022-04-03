@@ -67,7 +67,6 @@ width: 600px;
 justify-content: space-between;
 align-items: center;
 font-size: 18px;
-cursor: pointer;
 font-weight: bold;
 
 @media screen and (max-width: 860px){

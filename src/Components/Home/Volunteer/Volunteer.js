@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
-import Volun from '../../Images/Volunteer.jpg';
+import Volun from '../../Images/Slide3.JPG';
 
 
 export const Volunteer = () => {

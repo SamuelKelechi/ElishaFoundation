@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Donate from '../../Images/donate.jpg'
 
@@ -10,14 +11,14 @@ const Support = () => {
             <Card2>
                <h2>Your Support Will Help Us Reach More <span>Vulnerable</span> People</h2>
                <p>
-                   We believe everyone should be able to live with dignity, without 
-                   dependence. We are a Non-Governmental Organization, based in Lagos 
-                   Nigeria. We strive to protect and feed the poor, advocate and enlighten 
-                   communities, empower young people, serve as the voice to the voiceless, 
-                   we give grants and scholarship, we serve as an outstretched arm of God, 
-                   we bring succor and hope to the need
+               We trust that humans have so much go and love to offer one another, 
+               and the world, provided that the condition and environment is enabling 
+               to nurture these inherent ‘good’. Being conscious of this, we set out, 
+               and have made it our goal to build communities, encourage co-operations, 
+               inspire selfless service, and be an example of sanity to be emulated for 
+               positive change.
                 </p>
-                <Button variant="contained" color="success">Donate</Button>
+               <Link to='submit' style={{textDecoration:'none', width:'100%'}}><Button variant="contained" color="success" style={{width:'100%'}}>Donate</Button></Link> 
             </Card2>
             <Card1 src={Donate}/>
        </ContainerWrapper>
@@ -54,6 +55,7 @@ const Card1 = styled.img`
 
     @media screen and (max-width: 425px){
         width: 100%;
+        height: 320px;
     }
 `
 
@@ -67,17 +69,16 @@ const Card2 = styled.div`
     span{
             color: #EE5728;
         }
+    
+    p{
+        font-size: 16px;
+    }
 
     h2{
         font-weight: 500;
         font-size: 38px;
         line-height: 45px;
         color: #505050;
-    }
-
-    Button{
-        background: #003399;
-        border-radius: 8px;
     }
 
     @media screen and (max-width: 860px){

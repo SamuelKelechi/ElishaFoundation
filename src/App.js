@@ -14,6 +14,8 @@ import Blog from "./Components/Blog/Blog"
 
 import ScrollToTop from './ScrollToTop'
 import Submit from "./Components/Submit/Submit";
+import WhatsApp from "./Components/Whatsapp/WhatsApp";
+import BlogDetails from "./Components/BlogDetail/BlogDetails";
 
 
 function App() {
@@ -28,9 +30,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path='/contact' element={<Contact/>} />
             <Route path='/blog' element={<Blog/>} />
+            <Route path='/blogdetails/:id' element={<BlogDetails/>} />
             <Route path='/submit' element={<Submit/>} />
           </Routes>
           <Footer />
+          <WhatsApp />
         </ScrollToTop>
       </Router>
     </>
