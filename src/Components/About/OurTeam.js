@@ -15,8 +15,8 @@ const Card = () =>{
             <h1>OUR TEAM</h1>
             <Wrapper>
                <Cards img={img1} name="Elisha Ajose" text="FOUNDER/CHAIRMAN"/>
-               <Cards img={img2} name="Sanni Sunday Emmanuel" text="SECRETARY"/>
                <Cards img={img3} name="James Adeleye Adesuyi" text="TREASURER"/>
+               <Cards img={img2} name="Sanni Sunday Emmanuel" text="SECRETARY"/>
                <Cards img={img4} name="Miss Titilope Olumofin" text="SOCIAL WORKER"/>
                <Cards img={img5} name="Oluwatoyin Alicia Johnson" text="SOCIAL WORKER"/>
             </Wrapper>
