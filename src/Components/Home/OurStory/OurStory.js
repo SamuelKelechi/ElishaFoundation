@@ -4,10 +4,10 @@ import ReactPlayer from 'react-player'
 
 const OurStory = () => {
   return (
-    <>  
+    <>                                                             
     <Container>
         <Wrapper>
-            <Video url='https://www.youtube.com/watch?fbclid=IwAR0jYnV4ghaMGodIh95CJZ8_xt5u9UHHWvi2GGQuK9kuFTyJD-DmItgQFRo&v=4SN88fFAJp8&feature=youtu.be' />
+            <Video url='https://www.youtube.com/watch?v=b0pzF2N_0Gk' />
             <Right>
                 <h2>Our Story</h2>
                 <p>

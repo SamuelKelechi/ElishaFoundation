@@ -26,7 +26,7 @@ const Home = () => {
         <br/>
         <BlogLink />
         <br/>
-        <Gallery />
+        {/* <Gallery /> */}
         <br/>
         <br/>
         <br/>

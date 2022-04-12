@@ -2,6 +2,7 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer"
 import GlobalStyle from "./globalStyle";
 import 'antd/dist/antd.css';
+import "react-image-gallery/styles/css/image-gallery.css";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,7 +12,6 @@ import Home from "./Components/Home/Home";
 import About from "./Components/About/AboutPage"
 import Contact from "./Components/Contact/Contact";
 import Blog from "./Components/Blog/Blog"
-
 import ScrollToTop from './ScrollToTop'
 import Submit from "./Components/Submit/Submit";
 import WhatsApp from "./Components/Whatsapp/WhatsApp";
