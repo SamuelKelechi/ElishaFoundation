@@ -49,7 +49,7 @@ const Blog = () => {
                     We are excited about the lives we are touching, 
                     catch up on our events
                   </p>
-                  <Link to='/submit'>
+                  <Link to='/donate'>
                     <Btn>
                         Donate
                     </Btn>

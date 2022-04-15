@@ -31,7 +31,7 @@ function App() {
             <Route path='/contact' element={<Contact/>} />
             <Route path='/blog' element={<Blog/>} />
             <Route path='/blogdetails/:id' element={<BlogDetails/>} />
-            <Route path='/submit' element={<Submit/>} />
+            <Route path='/donate' element={<Submit/>} />
           </Routes>
           <Footer />
           <WhatsApp />

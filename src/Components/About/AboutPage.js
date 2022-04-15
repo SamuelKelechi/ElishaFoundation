@@ -21,7 +21,7 @@ const AboutPage = () =>{
                 <Image src = {img}/>
                 <OverLayer>
                     <Span>ABOUT US</Span>
-                   <Link to='/submit'><Button>Donate</Button></Link> 
+                   <Link to='/donate'><Button>Donate</Button></Link> 
                 </OverLayer>
             </LandingPage>
             <Cards>

@@ -44,7 +44,7 @@ export const Slide = () => {
            better than we meet it.
         </p>
         <div>
-          <Link to='/submit' style={{textDecoration:'none'}}><Button variant="contained" color="success">Donate</Button></Link>
+          <Link to='/donate' style={{textDecoration:'none'}}><Button variant="contained" color="success">Donate</Button></Link>
           <Link to='/about' style={{textDecoration:'none'}}><Button variant="outlined" style={{color:'white', border:'1px solid white'}}>Read More</Button></Link> 
         </div>
       </TextHold>
