@@ -4,8 +4,9 @@ import img from "../Images/Card1.jpg";
 import Icon1 from "../Images/mail.png";
 import Icon2 from "../Images/phone.png";
 import Icon3 from "../Images/locate.png";
-import facebook from "../Images/facebook.png";
-import instagram from "../Images/instagram.png";
+import Facebook from "../Images/facebook.png";
+import Instagram from "../Images/instagram.png";
+import Twitter from "../Images/twitter.png";
 import social from "../Images/social.webp";
 import { Button } from '@mui/material';
 import {Link} from 'react-router-dom';
@@ -24,8 +25,8 @@ const Contact = () => {
                 <Image src = {img}/>
                 <OverLayer>
                     <Span>CONTACT US</Span>
-                    <p>You can reach us anytime via edhf@gmail.com</p>
-                    <Link to='/submit'>
+                    <p>You can reach us anytime via infoedhf@gmail.com</p>
+                    <Link to='/donate'>
                         <Btn>
                             Donate
                         </Btn>
@@ -72,14 +73,26 @@ const Contact = () => {
                             <div>
                                 <h3>Socials</h3>
                                 <p>You can also reach us via our social handles</p>
-                                <span><img src={facebook} alt='facebook'/>    <img src={instagram} alt='instagram'/>      </span>
+                                <span>
+                                    <a href='https://web.facebook.com/edhf2020/' target='_blank'> 
+                                        <img src={Facebook} alt='Facebook' />
+                                    </a>
+
+                                    <a href='https://www.instagram.com/edhf_2020/' target='_blank'>  
+                                        <img src={Instagram} alt='Instagram' />
+                                    </a> 
+
+                                    <a href='https://twitter.com/EDHF2020' target='_blank'>  
+                                        <img style={{width:'28px'}} src={Twitter} alt='Twitter' />
+                                    </a> 
+                                </span>
                             </div>
                         </ContHold>
                     </Left>
                     <Right>
                         <Header>Your Support will help us reach more people</Header>
                         <p>
-                           You can reach us anytime via edhf@gmail.com
+                           You can reach us anytime via infoedhf@gmail.com
                         </p>
                         <InputHolder>
                             <InputSection>
@@ -287,7 +300,7 @@ const ContHold = styled.div`
     }
 
     span{
-        width: 80px;
+        width: 100px;
         display: flex;
         justify-content: space-between;
     }

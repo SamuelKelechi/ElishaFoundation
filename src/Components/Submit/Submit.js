@@ -59,6 +59,10 @@ const Submit= () => {
         <br/>
         <BankDetails>
             YOU CAN DO A TRANSFER TO ANY OF THE ACCOUNT DETAILS BELOW
+            <Wrapper>
+                <LeftAccount></LeftAccount>
+                <RightAccount></RightAccount>
+            </Wrapper>
         </BankDetails>
      </MainContain>
     </>
@@ -259,3 +263,8 @@ const BankDetails = styled.div`
     display: flex;
     justify-content: center;
 `
+const Wrapper = styled.div``
+
+const LeftAccount = styled.div``
+
+const RightAccount = styled.div``

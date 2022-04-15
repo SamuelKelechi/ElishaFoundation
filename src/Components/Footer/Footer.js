@@ -5,6 +5,8 @@ import Phone from '../Images/phone.png'
 import Email from '../Images/mail.png'
 import Facebook from '../Images/facebook.png'
 import Instagram from '../Images/instagram.png'
+import Twitter from '../Images/twitter.png'
+
 import { Button } from '@mui/material';
 import {Link} from 'react-router-dom';
 
@@ -39,7 +41,19 @@ const Footer = () => {
                     <p><img src={Phone} alt='Phone' />+2348144253138</p>
                     <p><img src={Email} alt='Email' />Edhf@gmail.com</p>
                     <b>OUR SOCIAL LINKS</b>
-                    <span><img src={Facebook} alt='Facebook' /> <img src={Instagram} alt='Instagram' /></span>
+                  <span>
+                    <a href='https://web.facebook.com/edhf2020/' target='_blank'> 
+                        <img src={Facebook} alt='Facebook' />
+                    </a>
+
+                    <a href='https://www.instagram.com/edhf_2020/' target='_blank'>  
+                        <img src={Instagram} alt='Instagram' />
+                    </a> 
+
+                    <a href='https://twitter.com/EDHF2020' target='_blank'>  
+                        <img style={{width:'30px'}} src={Twitter} alt='Twitter' />
+                    </a> 
+                  </span>
                 </Side3>
                 <Side4>
                    <div>GET LATEST UPDATE</div>
@@ -130,7 +144,7 @@ const Side3 = styled.div`
   justify-content: space-between;
 
   img{
-      margin-right: 5px;
+      margin-right: 10px;
   }
 
   @media screen and (max-width: 425px){
