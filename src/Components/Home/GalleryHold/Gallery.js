@@ -1,19 +1,13 @@
 import React from 'react';
-import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
 
-const images = [
-    {
-        img: '../../Images/bg1.jpg',
-    }
-]
+
 
 const Gallery = () => {
   return (
     <MainContainer>
         <Title>Our Event Gallery</Title>
         <GalleryWrap>
-            <FirstHold originalHeight='500px' items={images} />
         </GalleryWrap>
     </MainContainer>
   )
@@ -45,7 +39,7 @@ const GalleryWrap = styled.div`
     display: flex;
     flex-direction: column;
 `
-const FirstHold = styled(ImageGallery)`
+const FirstHold = styled.div`
     width: 100%;
     height: 300px;
 `

@@ -1,7 +1,7 @@
 import { Button } from 'antd';
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
-import Donation from '../Images/donate.jpg'
+import Blog from '../Images/bg1.jpg';
 import Blog1 from '../Images/Blog1.jpg';
 import Blog2 from '../Images/Blog2.jpg';
 import Blog3 from '../Images/Blog3.jpg';
@@ -36,20 +36,19 @@ function BlogDetails() {
     <br/>
     <MainContainer>
         <ContainerWrapper>
-
-            {
-                getBlog.map((props) => (
-                    <>
-                    <Title id={props} key={props.id}>{props.title}</Title>
-                    <Avat src={props.avatar} />
+                    <Title>Our Out-reach</Title>
+                    <Avat src={Blog} />
                     <p>
+                    Our vision is: building people with dignity and self-worth. Every human being should have the same opportunity. More than 100 million Nigerians lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate and enlighten communities, empower young people, serve as the voice to the voiceless, we give grants and scholarship, we serve as an outstretched arm of God, we bring succor and hope to the need
+lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate
+                    </p>
+                    <p>
+                    Our vision is: building people with dignity and self-worth. Every human being should have the same opportunity. More than 100 million Nigerians lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate and enlighten communities, empower young people, serve as the voice to the voiceless, we give grants and scholarship, we serve as an outstretched arm of God, we bring succor and hope to the need
+lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate
                     </p>
                     <BtnHold>
                         <Button>Back</Button>
                     </BtnHold>
-                </>
-                ))
-            }
 
             <Suggest>
                 Suggested Post
@@ -115,12 +114,13 @@ export default BlogDetails;
 const MainContainer = styled.div`
     width: 100%;
     height: auto;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
 `
 const ContainerWrapper = styled.div`
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,18 +176,19 @@ const Suggest = styled.div`
     height: 50px;
     font-size: 25px;
     margin-top: 20px;
+    margin-bottom: 10px;
     font-weight :500;
-    line-height:44.53px
+    line-height:44.53px;
 `
 
 const CardWrapper = styled.div`
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 `
 const BlogCard = styled.div`
-    width: 300px;
+    width: 320px;
     height: 420px;
     border-radius: 8px;
     background: url(${Blog1});
@@ -196,7 +197,6 @@ const BlogCard = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin: 20px;
 
     @media screen and (max-width){
         width: 90%;
@@ -258,7 +258,7 @@ const ButtomHold = styled.div`
 `
 
 const BlogCard2 = styled.div`
-    width: 300px;
+    width: 320px;
     height: 420px;
     border-radius: 8px;
     background: url(${Blog2});
@@ -267,7 +267,6 @@ const BlogCard2 = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin: 20px;
 
     @media screen and (max-width){
         width: 90%;
@@ -276,7 +275,7 @@ const BlogCard2 = styled.div`
     }
 `
 const BlogCard3 = styled.div`
-    width: 300px;
+    width: 320px;
     height: 420px;
     border-radius: 8px;
     background: url(${Blog3});
@@ -285,7 +284,6 @@ const BlogCard3 = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin: 20px;
 
     @media screen and (max-width){
         width: 90%;
