@@ -58,10 +58,18 @@ const Submit= () => {
         </DonateHold>
         <br/>
         <BankDetails>
-            YOU CAN DO A TRANSFER TO ANY OF THE ACCOUNT DETAILS BELOW
+            <h2>YOU CAN PAY TO ANY OF THE ACCOUNT DETAILS BELOW</h2>
             <Wrapper>
-                <LeftAccount></LeftAccount>
-                <RightAccount></RightAccount>
+                <LeftAccount>
+                    <h3>Elisha Development and Humanitarian Foundation</h3>
+                    <h2>ECO BANK</h2>
+                    <h3>3150003919</h3>
+                </LeftAccount>
+                <RightAccount>
+                    <h3>Elisha Development and Humanitarian Foundation</h3>
+                    <h2>GT BANK</h2>
+                    <h3>0564984454</h3>
+                </RightAccount>
             </Wrapper>
         </BankDetails>
      </MainContain>
@@ -261,10 +269,61 @@ const Right = styled.div`
 const BankDetails = styled.div`
     width: 80%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media screen and (max-width: 425px){
+        width: 90%;
+    }
 `
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+`
 
-const LeftAccount = styled.div``
+const LeftAccount = styled.div`
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0C3C9D;
+    padding: 15px 0 15px 0;
+    border-radius: 8px;
+    margin: 0 0 20px 0;
 
-const RightAccount = styled.div``
+    h2{
+        color: white;
+    }
+    h3{
+        color: white;
+    }
+    
+    @media screen and (max-width: 425px){
+        width: 100%
+    }
+`
+
+const RightAccount = styled.div`
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0C3C9D;
+    padding: 15px 0 15px 0;
+    border-radius: 8px;
+    
+    h2{
+        color: white;
+    }
+    h3{
+        color: white;
+    }
+    
+    @media screen and (max-width: 425px){
+        width: 100%
+    }
+`

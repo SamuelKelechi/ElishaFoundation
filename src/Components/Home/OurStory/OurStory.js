@@ -30,7 +30,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     @media screen and (max-width: 768px){
@@ -41,14 +41,14 @@ const Wrapper = styled.div`
 const Video = styled(ReactPlayer)`
         width: 60px;
         height: 350px;
-        margin: 20px;
         border-radius: 8px;
         outline: none;
 `
 
 const Right = styled.div`
-    width: 350px;
-    margin: 20px;
+    width: 600px;
+    border: 1px solid lightgrey;
+
     h2{
         font-size: 25px;
     }
