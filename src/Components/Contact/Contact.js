@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import img from "../Images/Card1.jpg";
+import img from "../Images/contact.jpg";
 import Icon1 from "../Images/mail.png";
 import Icon2 from "../Images/phone.png";
 import Icon3 from "../Images/locate.png";
 import Facebook from "../Images/facebook.png";
 import Instagram from "../Images/instagram.png";
 import Twitter from "../Images/twitter.png";
+import Youtube from "../Images/youtube.png";
 import social from "../Images/social.webp";
 import { Button } from '@mui/material';
 import {Link} from 'react-router-dom';
@@ -84,6 +85,10 @@ const Contact = () => {
 
                                     <a href='https://twitter.com/EDHF2020' target='_blank'>  
                                         <img style={{width:'28px'}} src={Twitter} alt='Twitter' />
+                                    </a> 
+
+                                    <a href='https://www.youtube.com/channel/UCMvjWigEfvGLvBusp22YxEw/videos' target='_blank'>  
+                                        <img style={{height:'70px', marginTop:'-20px', width:'58px', marginLeft:'-20px'}} src={Youtube} alt='Youtube' />
                                     </a> 
                                 </span>
                             </div>
@@ -300,9 +305,10 @@ const ContHold = styled.div`
     }
 
     span{
-        width: 100px;
+        width: 200px;
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
     }
 
     @media screen and (max-width: 650px){

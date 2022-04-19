@@ -6,6 +6,7 @@ import Email from '../Images/mail.png'
 import Facebook from '../Images/facebook.png'
 import Instagram from '../Images/instagram.png'
 import Twitter from '../Images/twitter.png'
+import Youtube from '../Images/youtube.png'
 
 import { Button } from '@mui/material';
 import {Link} from 'react-router-dom';
@@ -39,7 +40,7 @@ const Footer = () => {
                 <Side3>
                     <p>GET IN TOUCH</p>
                     <p><img src={Phone} alt='Phone' />+2348144253138</p>
-                    <p><img src={Email} alt='Email' />Edhf@gmail.com</p>
+                    <p><img src={Email} alt='Email' />infoedhf@gmail.com</p>
                     <b>OUR SOCIAL LINKS</b>
                   <span>
                     <a href='https://web.facebook.com/edhf2020/' target='_blank'> 
@@ -52,6 +53,10 @@ const Footer = () => {
 
                     <a href='https://twitter.com/EDHF2020' target='_blank'>  
                         <img style={{width:'30px'}} src={Twitter} alt='Twitter' />
+                    </a> 
+
+                    <a href='https://www.youtube.com/channel/UCMvjWigEfvGLvBusp22YxEw/videos' target='_blank'>  
+                        <img style={{height:'65px', marginLeft:'-29px'}} src={Youtube} alt='Twitter' />
                     </a> 
                   </span>
                 </Side3>
@@ -148,7 +153,7 @@ const Side3 = styled.div`
   }
 
   @media screen and (max-width: 425px){
-      width: 47%
+      width: 52%
   }
 `
 const Side4 = styled.div`
