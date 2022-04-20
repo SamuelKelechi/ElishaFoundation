@@ -49,8 +49,8 @@ line-height: 20px;
 const GalleryWrapper = styled.div`
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
-width: 80%;
+justify-content: space-around;
+width: 90%;
 align-items: center;
 padding: 10px;
 
@@ -64,7 +64,7 @@ padding: 10px;
 const TextHolder = styled.div`
 height: 450px;
 // background-color:green; 
-width: 450px;
+width: 500px;
 margin: 5px;
 font-size: 50px;
 display: flex;
@@ -81,7 +81,7 @@ text-align: center;
 `
 const FlipHolder = styled.div`
 height: 450px;
-width: 500px;
+width: 600px;
 margin: 5px;
 position: relative;
 border-radius: 8px;

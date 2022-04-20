@@ -38,7 +38,7 @@ const ContianerWrapper = styled.div`
     justify-content: space-around;
     border-top: 10px solid lightgray;
     border-bottom: 10px solid lightgray;
-    padding: 20px 0 20px 0;
+    padding: 30px 0 20px 0;
     flex-wrap: wrap;
     align-items: center;
 `
