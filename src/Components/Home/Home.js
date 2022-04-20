@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogLink from './BlogLink/BlogLink';
-import Gallery from './GalleryHold/Gallery';
+import Datas from './Datas/Datas';
+import Gallery from './Gallery/GaleryFlip';
 import OurImpact from './ImpactHold/OurImpact';
 import Mission from './MissionHold/Mission';
 import OurStory from './OurStory/OurStory';
@@ -19,7 +20,10 @@ const Home = () => {
         <br/>
         <OurStory />
         <br/>
+        <Datas />
+        <br/>
         <Support />
+        <br/>
         <br/>
         <br/>
         <Volunteer />
@@ -27,8 +31,6 @@ const Home = () => {
         <BlogLink />
         <br/>
         <Gallery />
-        <br/>
-        <br/>
         <br/>
         <br/>
     </>

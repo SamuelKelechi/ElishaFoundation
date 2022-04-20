@@ -1,9 +1,8 @@
 import { Button } from '@mui/material';
 import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
-import img from "../Images/about.JPG";
+import img from "../Images/Card1.jpg";
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 import {db} from "../../Base"
 import {collection, getDocs, query, orderBy, limit} from "firebase/firestore";
 
@@ -123,9 +122,8 @@ const MainContainer = styled.div`
 
   h2{
     width: 90%;
-    padding-left: 15px;
-    font-size: 25px;
-
+    font-size: 30px;
+    text-align: center;
   }
 `
 
