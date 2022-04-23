@@ -120,7 +120,7 @@ const MainContainer = styled.div`
     justify-content: center;
 `
 const ContainerWrapper = styled.div`
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
