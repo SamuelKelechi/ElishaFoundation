@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import img from "../Images/Card1.jpg";
 import { Link } from 'react-router-dom';
 import {db} from "../../Base"
-import {collection, getDocs, query, orderBy, limit} from "firebase/firestore";
+import {collection, query, orderBy, limit, onSnapshot} from "firebase/firestore";
 
 
 const Blog = () => {
@@ -18,14 +18,24 @@ const Blog = () => {
 
     
 
-    const getBlog = async () => {
-        const data = await getDocs(querry, userCollectionRef);
-        setGetblog(data.docs.map((doc) => ({...doc.data(), id:doc.id})))
+    const getBlog =  () => {
+        onSnapshot(querry, (snapshot) => {
+            const blog = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setGetblog(blog);
+        });
     };
 
     const getBlog1 = async () => {
-        const data = await getDocs(q, userCollectionRef);
-        setGetblog1(data.docs.map((doc) => ({...doc.data(), id:doc.id})))
+        onSnapshot(q, (snapshot) => {
+            const blog = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setGetblog1(blog);
+        });
     };
 
     useEffect(() => {
@@ -70,7 +80,7 @@ const Blog = () => {
                         <p>
                             {props.story}
                         </p>
-                        <Button variant="contained" color="success">Read More</Button>
+                        {/* <Button variant="contained" color="success">Read More</Button> */}
                     </Right>
                     </>
                     ))
@@ -251,11 +261,12 @@ const Right = styled.div`
     font-size: 20px;
     padding: 0;
     text-transform: uppercase;
+    text-align: left;
   }
 
   p{
       line-height: 25px;
-      font-size: 17px;
+      font-size: 16px;
   }
 
   @media screen and (max-width: 650px){

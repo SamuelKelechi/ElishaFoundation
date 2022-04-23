@@ -1,3 +1,4 @@
+import React,{useState, useEffect} from 'react';
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer"
 import GlobalStyle from "./globalStyle";
@@ -16,25 +17,41 @@ import ScrollToTop from './ScrollToTop'
 import Submit from "./Components/Submit/Submit";
 import WhatsApp from "./Components/Whatsapp/WhatsApp";
 import BlogDetails from "./Components/BlogDetail/BlogDetails";
+import Admin from "./Components/Admin/Admin";
+import Loader from "./Components/Loader/Loader";
 
 
 function App() {
+  const [done, setDone] = useState(undefined)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDone(true)
+    }, 4000);
+  }, [])
   return (
     <>
       <Router>
         <ScrollToTop>
-          <GlobalStyle />    
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path='/contact' element={<Contact/>} />
-            <Route path='/blog' element={<Blog/>} />
-            <Route path='/blogdetails/:id' element={<BlogDetails/>} />
-            <Route path='/donate' element={<Submit/>} />
-          </Routes>
-          <Footer />
-          <WhatsApp />
+          <GlobalStyle />  
+          {
+            !done ?  <Loader /> :  
+            <>               
+            <Header />  
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path='/contact' element={<Contact/>} />
+              <Route path='/blog' element={<Blog/>} />
+              <Route path='/blogdetails/:id' element={<BlogDetails/>} />
+              <Route path='/donate' element={<Submit/>} />
+              <Route path='/edhfadmin2022' element={<Admin/>} />
+            </Routes>
+            <Footer />
+            <WhatsApp />
+          </> 
+          }
+       
         </ScrollToTop>
       </Router>
     </>
