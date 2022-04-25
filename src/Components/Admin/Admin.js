@@ -155,6 +155,8 @@ const ContainWrapper = styled.div`
     div{
         width: 100%;
         color: green;
+        display: flex;
+        justify-content: center;
     }
 
     Button{
