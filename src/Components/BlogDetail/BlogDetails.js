@@ -1,4 +1,5 @@
 import { Button } from 'antd';
+import blogs from '../Blog/Blog'
 import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Blog from '../Images/bg1.jpg';
@@ -17,13 +18,13 @@ function BlogDetails() {
 
     useEffect(() => {
         async function getBlog(){
-            const querySnapshot = await getDocs(query(collection(db, `blog/${(id)}`)));
+            const querySnapshot = await getDocs(query(collection(db, `blog/${(id)}/blog`)));
             let dataArray = []
             querySnapshot.forEach((doc) => {
                 dataArray.push({...doc.data(), id: doc.id});
             });
             setGetblog(dataArray)
-            console.log(id)
+            console.log("My id", id)
         }
         getBlog();
       }, [id]);
@@ -36,16 +37,18 @@ function BlogDetails() {
     <br/>
     <MainContainer>
         <ContainerWrapper>
-                    <Title>Our Out-reach</Title>
-                    <Avat src={Blog} />
-                    <p>
-                    Our vision is: building people with dignity and self-worth. Every human being should have the same opportunity. More than 100 million Nigerians lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate and enlighten communities, empower young people, serve as the voice to the voiceless, we give grants and scholarship, we serve as an outstretched arm of God, we bring succor and hope to the need
-lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate
-                    </p>
-                    <p>
-                    Our vision is: building people with dignity and self-worth. Every human being should have the same opportunity. More than 100 million Nigerians lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate and enlighten communities, empower young people, serve as the voice to the voiceless, we give grants and scholarship, we serve as an outstretched arm of God, we bring succor and hope to the need
-lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate
-                    </p>
+                       <>
+                            <Title>My Title</Title>
+                            <Avat src={getBlog.avatar} />
+                            <p>
+                                Our vision is: building people with dignity and self-worth. Every human being should have the same opportunity. More than 100 million Nigerians lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate and enlighten communities, empower young people, serve as the voice to the voiceless, we give grants and scholarship, we serve as an outstretched arm of God, we bring succor and hope to the need
+                                lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate
+                            </p>
+                            <p>
+                                Our vision is: building people with dignity and self-worth. Every human being should have the same opportunity. More than 100 million Nigerians lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate and enlighten communities, empower young people, serve as the voice to the voiceless, we give grants and scholarship, we serve as an outstretched arm of God, we bring succor and hope to the need
+                                lack access to basic amenities—from clean water and electricity quality education and liberty to participate in the economy, as equal citizens. We are about changing these phenomena. We believe everyone should be able to live with dignity, without dependence. We are a Non-Governmental Organization, based in Lagos Nigeria. We strive to protect and feed the poor, advocate
+                            </p>
+                        </>
                     <BtnHold>
                         <Button>Back</Button>
                     </BtnHold>

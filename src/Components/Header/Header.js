@@ -3,6 +3,7 @@ import { Button } from '@mui/material';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {FaBars, FaTimes} from 'react-icons/fa';
+import Logo from '../Images/Logo.png'
 
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
   return (
     <HeaderContainer>
         <HeaderWrapper>
-           <LogoImg src='./Logo.png'/>
+           <LogoImg src={Logo}/>
            <Navs onClick={handleClick} click={click}>
                <NavLinks to='/' >Home</NavLinks>
                <NavLinks to='/about'>About</NavLinks>

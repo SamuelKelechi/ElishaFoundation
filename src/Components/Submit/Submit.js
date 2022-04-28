@@ -176,7 +176,7 @@ const DonateContent = styled.div`
         width: 100%;
         color: white;
         font-size: 20px;
-        padding-left: 40px;
+        text-align: center;
     }
 
     Button{
@@ -308,13 +308,14 @@ const LeftAccount = styled.div`
 `
 
 const RightAccount = styled.div`
-    width: 400px;
+     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #0C3C9D;
     padding: 15px 0 15px 0;
     border-radius: 8px;
+    margin: 0 0 20px 0;
     
     h2{
         color: white;
