@@ -34,7 +34,7 @@ const Footer = () => {
                         <Link to='/about' style={{textDecoration:'none', color:'white'}}><span>ABOUT</span></Link>
                         <Link to='/contact' style={{textDecoration:'none', color:'white'}}><span>CONTACT</span></Link>
                         <Link to='/blog' style={{textDecoration:'none', color:'white'}}><span>BLOG</span></Link>
-                        <span>DONATE</span>
+                        <Link to='/donate' style={{textDecoration:'none', color:'white'}}><span>DONATE</span></Link>
                     </div>
                 </Side2>
                 <Side3>
@@ -55,9 +55,9 @@ const Footer = () => {
                         <img style={{width:'30px'}} src={Twitter} alt='Twitter' />
                     </a> 
 
-                    <a href='https://www.youtube.com/channel/UCMvjWigEfvGLvBusp22YxEw/videos' target='_blank'>  
-                        <img style={{height:'65px', marginLeft:'-29px'}} src={Youtube} alt='Twitter' />
-                    </a> 
+                    {/* <a href='https://www.youtube.com/channel/UCMvjWigEfvGLvBusp22YxEw/videos' target='_blank'>  
+                        <img style={{height:'65px'}} src={Youtube} alt='Youtube' />
+                    </a>  */}
                   </span>
                 </Side3>
                 <Side4>
