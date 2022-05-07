@@ -1,12 +1,33 @@
-import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import img from '../Images/Support.jpg';
 import Visa from '../Images/Visa.png'
+import { PaystackButton } from 'react-paystack'
 
 
 const Submit= () => {
+
+    const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY
+
     const [amount, setAmount] = useState(0)
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+
+    const componentProps = {
+        email,
+        amount,
+        metadata: {
+          name,
+          phone,
+        },
+        publicKey,
+        text: "Donate Now",
+        onSuccess: () =>
+          alert("Thanks for your support!"),
+        onClose: () => alert("Wait! Any issues making Transaction? Please, contact us :("),
+      }
+
 
   return (
     <>
@@ -30,7 +51,7 @@ const Submit= () => {
                 <Top>Donate Now</Top>
                 <Avat src={Visa} alt='donate' />
                 <br/>
-                <h3> {" "}You are giving ₦{amount / 100}{" "}</h3>
+                <h3> {" "}You are Donating ₦{amount / 100}{" "}</h3>
                 <p>Please enter your card information</p>
                 <FomWrapper>
                     <Left>
@@ -40,20 +61,26 @@ const Submit= () => {
                             }} type='number' placeholder='Enter Amount to Debit'/>
                         <br/>
                         <br/>
-                        <label>Name on Card</label><br/><input type='string' placeholder='Enter Name on Your Card'/>
+                        <label>Name on Card</label><br/><input type='string' onChange={(e) => {
+                                setName(e.target.value);
+                            }} placeholder='Enter Name on Your Card'/>
                         <br/>
                         <br/>
                     </Left>
                     <Right>
-                        <label type='email' >Email</label><br/><input placeholder='Enter Your Email'/>
+                        <label>Email</label><br/><input  type='email' onChange={(e) => {
+                                setEmail(e.target.value);
+                            }} placeholder='Enter Your Email'/>
                         <br/>
                         <br/>
-                        <label>Country</label><br/><input type='country' placeholder='Enter Name of Country'/>
+                        <label>Phone Number</label><br/><input type='number' onChange={(e) => {
+                                setPhone(e.target.value);
+                            }} placeholder='Enter Telephone Number'/>
                         <br/>
                         <br/>
                     </Right>
                 </FomWrapper>
-                <Button variant="contained" >Donate now</Button>
+                <PayButton  {...componentProps} />
             </DonateContent>
         </DonateHold>
         <br/>
@@ -327,4 +354,10 @@ const RightAccount = styled.div`
     @media screen and (max-width: 425px){
         width: 100%
     }
+`
+const PayButton = styled(PaystackButton)`
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
 `
