@@ -1,13 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
+
+import { Button } from "@mui/material";
 
 const OurStory = () => {
   return (
     <>                                                             
     <Container>
         <Wrapper>
+            <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
             <Video url='https://www.youtube.com/watch?v=b0pzF2N_0Gk' />
+            <br/>
+            <a href='/about' style={{textDecoration:'none'}}><Button variant="outlined" style={{color:'black', border:'1px solid #003399'}}>Watch More</Button></a> 
+            </div>
+          
             <Right>
                 <h2>ENRICHING LIVES WITH HOPE, BRINGING JOY AND PEACE TO THE NEEDY</h2>
                 <p>
