@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import img from "../Images/Card1.jpg";
 
 const Contact = () => {
   return (
@@ -14,15 +13,7 @@ const Contact = () => {
                 <Image src = {img}/>
                 <OverLayer>
                     <Span>CONTACT US</Span>
-                    <p>You can reach us anytime via email@gmail.com</p>
-                    <Button>
-                        Donate
-                    </Button>
-                </OverLayer>
-            </LandingPage>
 
-
-            UPDATING PAGE SOON...
         </Content>
     </>
   )
@@ -34,18 +25,19 @@ const Content = styled.div`
     width:100%;
     min-height:100vh;
     height:100%;
+
 `
 
 const LandingPage = styled.div`
     width:100%;
     height:400px;
     background-color:blue;
-`
+
 const Image = styled.img`
     width:100%;
     height:400px;
     object-fit:cover;
-    position: absolute;
+
 `
 const OverLayer = styled.div`
     height:100%;
@@ -59,10 +51,7 @@ const OverLayer = styled.div`
 
     p{
         color: white;
-    }
-`
-const Button = styled.button`
-    width:100px;
+
     border:none;
     outline:none;
     height:40px;
@@ -77,10 +66,10 @@ const Button = styled.button`
         cursor:pointer;
         transform:scale(1.10)
     }
+
 `
 
 const Span = styled.div`
     font-size:25px;
     color:#ffff;
     font-weight:bold;
-`

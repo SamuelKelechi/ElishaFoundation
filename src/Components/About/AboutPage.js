@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import img from "./image/pexels-lagos-food-bank-initiative-8060425.jpg"
 import Card from "./Card"
 import OurTeam from "./OurTeam"
 import Icon1 from "../Images/icon1.png"
 import Icon2 from "../Images/icon2.png"
 import Icon3 from "../Images/icon3.png"
-
 
 
 const AboutPage = () =>{
@@ -20,60 +18,24 @@ const AboutPage = () =>{
                 <Image src = {img}/>
                 <OverLayer>
                     <Span>ABOUT US</Span>
-                    <Button>Donate</Button>
+
                 </OverLayer>
             </LandingPage>
             <Cards>
                 <br/>
                 <Card 
-                    discription="Our vision is buliding people with dignity and self-worth.Every human being should have the 
-                    same opportunity. More than 100 million Nigerians lack access to basic amenities-from clean were and 
-                    electricity quility education and liberty to participatein the economy, as equal cityzens. We are about 
-                    changing these phenomena, We belive everyone should be able to love with dignity. without dependence. We are 
-                    a Non-Govermental Organization, based in Lageos Nigeria.We strive to protectand feed th poor, advocate and
-                    elighten communities, empower young people, serve as the voice to the voiceless, we give grants and schoolarship,
-                    we serve as an outstretched arm of God, we being succer and hope to the need." 
-                    Title="OUR VISION" 
-                    cl="#003399" 
-                    icon={Icon1}
-                    Info="At the core of our values, is the utmost
-                    goal of making individual lives, wether old or young,
-                    and communities of people, better than we meet it."
+
                     text="OUR VISION"
                 />
                 <br/>
                 <Card 
-                    discription="Our vision is buliding people with dignity and self-worth.Every human being should have the 
-                    same opportunity. More than 100 million Nigerians lack access to basic amenities-from clean were and 
-                    electricity quility education and liberty to participatein the economy, as equal cityzens. We are about 
-                    changing these phenomena, We belive everyone should be able to love with dignity. without dependence. We are 
-                    a Non-Govermental Organization, based in Lageos Nigeria.We strive to protectand feed th poor, advocate and
-                    elighten communities, empower young people, serve as the voice to the voiceless, we give grants and schoolarship,
-                    we serve as an outstretched arm of God, we being succer and hope to the need." 
-                    Title="OUR MISION" 
-                    cl="#25AAE2" 
-                    icon={Icon2}
-                    Info="At the core of our values, is the utmost
-                    goal of making individual lives, wether old or young,
-                    and communities of people, better than we meet it."
+
                     text="OUR MISSION"
                     fd="row-reverse"
                     />
                     <br/>
                 <Card 
-                    discription="Our vision is buliding people with dignity and self-worth.Every human being should have the 
-                    same opportunity. More than 100 million Nigerians lack access to basic amenities-from clean were and 
-                    electricity quility education and liberty to participatein the economy, as equal cityzens. We are about 
-                    changing these phenomena, We belive everyone should be able to love with dignity. without dependence. We are 
-                    a Non-Govermental Organization, based in Lageos Nigeria.We strive to protectand feed th poor, advocate and
-                    elighten communities, empower young people, serve as the voice to the voiceless, we give grants and schoolarship,
-                    we serve as an outstretched arm of God, we being succer and hope to the need." 
-                    Title="OUR VOLUNTEERS/TEAM" 
-                    cl="#3AB54A" 
-                    icon={Icon3}
-                    Info="At the core of our values, is the utmost
-                    goal of making individual lives, wether old or young,
-                    and communities of people, better than we meet it."
+
                     text="VOLUNTEER"
                 />
             </Cards>
